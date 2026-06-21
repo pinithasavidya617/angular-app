@@ -1,7 +1,11 @@
 <div>
-  <span>{{name}}</span>
+  <span>{{product?.name}}</span>
 </div>
-<div>
-  <span>{{price}}</span>
-  <span>{{currency}}</span>
+<div *ngIf="product?.currency === 'USD'">
+  <span>{{product?.price}}</span>
+  <span>{{product?.currency}}</span>
+</div>
+<div *ngIf="product?.currency != 'USD'">
+  <span>{{product?.currency}}</span>
+  <span>{{product?.price}}</span>
 </div>

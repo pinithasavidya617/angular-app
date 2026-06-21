@@ -1,7 +1,11 @@
 
 <div id="available_products" class="available-products">
   <span>{{titlePublic}}</span>
-  <app-product></app-product>
+  <div class="product-list">
+    <ng-container *ngFor="let product of products">
+      <app-product [product]="product" ]></app-product>  <!-- Input bind -->
+    </ng-container>
+  </div>
 </div>
 
 
