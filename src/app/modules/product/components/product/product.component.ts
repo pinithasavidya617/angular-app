@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
-import {Product} from "../products/products.component";
 import {Router} from "@angular/router";
+import {Product} from "../../../../models/product";
 
 @Component({
   selector: 'app-product',
