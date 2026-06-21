@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {Product} from "../products/products.component";
 
 @Component({
@@ -6,8 +6,26 @@ import {Product} from "../products/products.component";
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit , OnDestroy, OnChanges{
 
   @Input() product?: Product;
+  @Input() price?: number;
+
+  constructor() {
+    console.log('ProductComponent constructor');
+  }
+
+  ngOnInit() {
+    console.log('Product OnInit');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Product Changes', changes);
+  }
+
+  ngOnDestroy() {
+    console.log("Product Destroyed");
+  }
+
 
 }

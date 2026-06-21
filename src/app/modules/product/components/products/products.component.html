@@ -1,9 +1,10 @@
 
 <div id="available_products" class="available-products">
   <span>{{titlePublic}}</span>
+  <app-product-filter (onSearchChange)="onSearchChange($event)"></app-product-filter>
   <div class="product-list">
-    <ng-container *ngFor="let product of products">
-      <app-product [product]="product" ]></app-product>  <!-- Input bind -->
+    <ng-container *ngFor="let product of displayProducts">
+      <app-product [product]="product" [price]="product.price" ></app-product>  <!-- Input bind -->
     </ng-container>
   </div>
 </div>
