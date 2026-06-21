@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
+  name: string = "HeadPhone";
+  price: number = 25.00;
+  currency: string = "USD";
+
 }
