@@ -18,6 +18,7 @@ import { BodyComponent } from './body/body.component';
     BrowserModule,
     AppRoutingModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
