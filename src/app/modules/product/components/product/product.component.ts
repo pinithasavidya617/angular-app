@@ -27,9 +27,11 @@ export class ProductComponent implements OnInit , OnDestroy, OnChanges{
     console.log("Product Destroyed");
   }
 
-  onViewProduct(){
+  onViewProduct() {
     console.log('Product View');
-    this.navigation.navigate(['/app/products/view-product']);
+    this.navigation.navigate([
+      `/app/products/view-product/${this.product?.name}`
+    ]);
   }
 
 }
