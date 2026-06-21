@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { BodyComponent } from './body/body.component';
+import {ProductModule} from "./modules/product/product.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BodyComponent } from './body/body.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProductModule
   ],
   exports: [],
   providers: [],

@@ -8,6 +8,9 @@ import { ProductComponent } from './components/product/product.component';
   declarations: [
     ProductComponent
   ],
+  exports: [
+    ProductComponent
+  ],
   imports: [
     CommonModule
   ]
