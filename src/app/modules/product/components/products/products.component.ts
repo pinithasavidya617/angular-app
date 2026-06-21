@@ -1,4 +1,5 @@
 import {Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-products',
@@ -14,24 +15,53 @@ export class ProductsComponent implements OnInit, OnChanges, OnDestroy, DoCheck 
     {
       name: "Head phone",
       price: 25,
-      currency: "USD"
+      currency: "USD",
+      category: "ELEC"
     },
 
     {
       name: "USB",
       price: 3000,
-      currency: "LKR"
+      currency: "LKR",
+      category: "ELEC"
+
+    },
+
+
+    {
+      name: "Egg",
+      price: 30,
+      currency: "LKR",
+      category: "FOOD"
+
+    },
+
+
+    {
+      name: "Penadol",
+      price: 30,
+      currency: "LKR",
+      category: "MED"
+
     }
   ];
 
   public displayProducts: Product[] = [];
 
-  constructor() {
-    // console.log('Product constructor');
+  constructor(
+    private route: ActivatedRoute,
+  ) {
   }
 
   ngOnInit() {
-    this.displayProducts = this.products;
+    this.route.queryParams.subscribe((param => {
+      const category = param['category'];
+      if (category) {
+        this.displayProducts = this.products.filter(p => p.category === category);
+      } else {
+        this.displayProducts = this.products;
+      }
+    }))
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -70,4 +100,5 @@ export interface Product {
   name: string;
   price: number;
   currency: string;
+  category: string;
 }

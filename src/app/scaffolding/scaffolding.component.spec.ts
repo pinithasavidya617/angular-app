@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ScaffoldingComponent } from './scaffolding.component';
+
+describe('ScaffoldingComponent', () => {
+  let component: ScaffoldingComponent;
+  let fixture: ComponentFixture<ScaffoldingComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ScaffoldingComponent]
+    });
+    fixture = TestBed.createComponent(ScaffoldingComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

@@ -1,5 +1,6 @@
 import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {Product} from "../products/products.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-product',
@@ -11,8 +12,7 @@ export class ProductComponent implements OnInit , OnDestroy, OnChanges{
   @Input() product?: Product;
   @Input() price?: number;
 
-  constructor() {
-    console.log('ProductComponent constructor');
+  constructor(private navigation: Router) {
   }
 
   ngOnInit() {
@@ -27,5 +27,9 @@ export class ProductComponent implements OnInit , OnDestroy, OnChanges{
     console.log("Product Destroyed");
   }
 
+  onViewProduct(){
+    console.log('Product View');
+    this.navigation.navigate(['/app/products/view-product']);
+  }
 
 }

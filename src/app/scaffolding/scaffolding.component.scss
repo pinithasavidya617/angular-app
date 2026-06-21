@@ -1,0 +1,24 @@
+.base-application{
+
+}
+
+.app-header{
+  height: 100px;
+  width: 100%;
+}
+
+.app-section{
+  height: calc(100vh - 100px);
+  width: 100%;
+  display: flex;
+}
+
+.app-side-bar{
+  height: 100%;
+  width: 250px;
+}
+
+.app-body{
+  height: 100%;
+  width: 100%;
+}

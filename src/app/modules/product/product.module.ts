@@ -4,13 +4,16 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductFilterComponent } from './components/product-filter/product-filter.component';
 import {FormsModule} from "@angular/forms";
+import {ProductRoutingModule} from "./product-routing.module";
+import { ViewComponent } from './components/view/view.component';
 
 
 @NgModule({
   declarations: [
     ProductComponent,
     ProductsComponent,
-    ProductFilterComponent
+    ProductFilterComponent,
+    ViewComponent
   ],
   exports: [
     ProductComponent,
@@ -18,7 +21,8 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ProductRoutingModule
   ]
 })
 export class ProductModule { }
