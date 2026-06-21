@@ -1,11 +1,12 @@
 <div>
   <span>{{product?.name}}</span>
 </div>
-<div *ngIf="product?.currency === 'USD'">
+<div *ngIf="product?.currency === 'USD'; else localCurrency">
   <span>{{product?.price}}</span>
   <span>{{product?.currency}}</span>
 </div>
-<div *ngIf="product?.currency != 'USD'">
+
+<ng-template #localCurrency>
   <span>{{product?.currency}}</span>
   <span>{{product?.price}}</span>
-</div>
+</ng-template>
